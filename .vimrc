@@ -19,7 +19,7 @@ call plug#end()
 
 "BASICS
 	set nocompatible
-	set termguicolors
+	"set termguicolors "cant use in tmux (colors will be off)
 	filetype plugin on
 	"filetype plugin indent on "(alternative, dont know)
 	syntax enable
