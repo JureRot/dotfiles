@@ -85,7 +85,12 @@ call plug#end()
 	let g:ale_lint_on_enter = 1
 	let g:ale_lint_on_save = 1
 
-
+"MAPPINGS
+map đ to ctrl+] for jump to tag (subject to change)
+	nnoremap <Char-273> <C-]>
+map š to ctrl+t for jump back from tag (subject to change)
+	nnoremap <Char-353> <C-t>
+	
 "SNIPPETS
 "move line up and donw from normal mode with ctrl+up/down
 "selects the line with V and uses move command to move it up (-2 because it pastes below address) or down (+1) one line
