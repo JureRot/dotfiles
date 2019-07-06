@@ -86,9 +86,9 @@ call plug#end()
 	let g:ale_lint_on_save = 1
 
 "MAPPINGS
-map đ to ctrl+] for jump to tag (subject to change)
+"map đ to ctrl+] for jump to tag (subject to change)
 	nnoremap <Char-273> <C-]>
-map š to ctrl+t for jump back from tag (subject to change)
+"map š to ctrl+t for jump back from tag (subject to change)
 	nnoremap <Char-353> <C-t>
 	
 "SNIPPETS
