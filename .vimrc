@@ -84,6 +84,8 @@ call plug#end()
 	let g:ale_lint_on_text_changed = 0
 	let g:ale_lint_on_enter = 1
 	let g:ale_lint_on_save = 1
+"prevent cursor disappearing on line with error or warning from ALE (on ubuntu)
+	"let g:ale_echo_cursor = 0
 
 "MAPPINGS
 "map đ to ctrl+] for jump to tag (subject to change)
