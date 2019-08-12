@@ -84,7 +84,8 @@ call plug#end()
 	let g:ale_lint_on_text_changed = 0
 	let g:ale_lint_on_enter = 1
 	let g:ale_lint_on_save = 1
-"prevent cursor disappearing on line with error or warning from ALE (on ubuntu)
+"on some versions of gvim (vim-gkt3) on ubuntu cursor may disappears on lines with ALE errors or warnings
+"if you really need clipboard support use next line to fix 
 	"let g:ale_echo_cursor = 0
 
 "MAPPINGS
