@@ -67,9 +67,9 @@ call plug#end()
 	set ttimeoutlen=0
 
 "THEME SETUP
+	let g:gruvbox_italic=1
 	colorscheme gruvbox
 	set background=dark
-	let g:gruvbox_italic=1
 	let g:gruvbox_contrast_dark="medium"
 
 "LIGHTLINE SETUP
