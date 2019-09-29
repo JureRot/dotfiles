@@ -85,7 +85,7 @@ call plug#end()
 	let g:ale_lint_on_enter = 1
 	let g:ale_lint_on_save = 1
 "on some versions of gvim (vim-gkt3) on ubuntu cursor may disappear on lines with ALE errors or warnings
-"if you really need gvim (clipboard support) use next line to fix 
+"if you really need gvim (clipboard support) use next line to fix
 	"let g:ale_echo_cursor = 0
 
 "MAPPINGS
@@ -93,7 +93,7 @@ call plug#end()
 	nnoremap <Char-273> <C-]>
 "map š to ctrl+t for jump back from tag (subject to change)
 	nnoremap <Char-353> <C-t>
-	
+
 "SNIPPETS
 "move line up and donw from normal mode with ctrl+up/down
 "selects the line with V and uses move command to move it up (-2 because it pastes below address) or down (+1) one line
