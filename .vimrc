@@ -19,7 +19,7 @@ call plug#end()
 
 "BASICS
 	set nocompatible
-	set termguicolors "cant use in tmux (cbut we can use terminal inside vim so whatever)
+	set termguicolors "cant use in tmux (but we can use terminal inside vim so whatever)
 	filetype plugin on
 	"filetype plugin indent on "(alternative, dont know)
 	syntax enable
@@ -67,7 +67,7 @@ call plug#end()
 	set ttimeoutlen=0
 
 "THEME SETUP
-	let g:gruvbox_italic=1
+	"let g:gruvbox_italic=1 "uncomment if terminal allows italics
 	colorscheme gruvbox
 	set background=dark
 	let g:gruvbox_contrast_dark="medium"
