@@ -15,8 +15,8 @@ call plug#begin('~/.vim/vim-plug')
 	"vim-unimpaired / vim-move (done with snippets (i think))
 	"supertab for autocomplete (USE CTRL+N MACRO INSTEAD AND CTRL+E TO EXIT (or omni complete ctrl+x-ctrl+o))
 	"ctrlp (dont know if needed)
-	"Plug 'blueyed/vim-diminactive'
-	Plug 'TaDaa/vimade'
+	"Plug 'blueyed/vim-diminactive' "works weirdly with nerdtree
+	"Plug 'TaDaa/vimade' "works weirdly with multiple windows of the same buffer and with vertical splits
 call plug#end()
 
 "BASICS
