@@ -106,5 +106,5 @@ call plug#end()
 "previous command closes visual selection so use gv command to reselect previously selected text
 "use = command to realign it (auto indentation)
 "use gv command again to reselect previously selected text (because = command closes visual selection)
-	vnoremap <C-Up> :m '<-2<CR>gv
-	vnoremap <C-Down> :m '>+1<CR>gv
+	vnoremap <C-Up> :m '<-2<CR>gv=gv
+	vnoremap <C-Down> :m '>+1<CR>gv=gv
