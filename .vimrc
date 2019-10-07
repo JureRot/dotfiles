@@ -10,12 +10,17 @@ call plug#begin('~/.vim/vim-plug')
 	Plug 'w0rp/ale'
 	"nerdtree
 	Plug 'scrooloose/nerdtree'
+	"vim-vinegar (maybe nerdtree alternative using netrw)
+	Plug 'tpope/vim-vinegar'
 	"lexima (could be alternatives, but lexima worked for now) (COULD BE DONE WITH MACROS)
 	Plug 'cohama/lexima.vim'
 	"vim-unimpaired / vim-move (done with snippets (i think))
 	"supertab for autocomplete (USE CTRL+N MACRO INSTEAD AND CTRL+E TO EXIT (or omni complete ctrl+x-ctrl+o))
-	"ctrlp (dont know if needed)
-	"Plug 'blueyed/vim-diminactive'
+	"ctrlp (dont know if needed, becuase of :find * but still much better fuzzy find)
+	Plug 'kien/ctrlp.vim'
+	"vim-diminactive (doesnt work with nerdtree, but than, nothing does)
+	Plug 'blueyed/vim-diminactive'
+	"vimade (diminactive alternatvie, looks amazing, but dosnt work with mac on specific directory)
 	"Plug 'TaDaa/vimade'
 call plug#end()
 
@@ -24,7 +29,7 @@ call plug#end()
 	set termguicolors "cant use in tmux (but we can use terminal inside vim so whatever)
 	filetype plugin on
 	"filetype plugin indent on "(alternative, dont know)
-	syntax enable
+	"syntax enable
 	set number relativenumber
 	set wrap linebreak
 	"set autoindent
@@ -52,6 +57,11 @@ call plug#end()
 	"set expandtab "(makes tabs into spaces)
 	"set softtabstop=4 (only shows tabs as 4 spaces long, actually still 8 spaces or something)
 
+"make indented tabs show vertical lines
+	set listchars=tab:\|\ 
+	"the space above is intentional
+	set list
+
 "highlight cursor line
 	set cursorline
 
@@ -61,25 +71,35 @@ call plug#end()
 "disable automatic commmenting on new line
 	autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-"splits to open blow and right (opposite of default)
+"splits to open below and right (opposite of default)
 	set splitbelow splitright
 
 "fix exiting visual mode delay
 	set timeoutlen=1000
 	set ttimeoutlen=0
 
+"NETRW SETUP
+"shows listing in tree view (can be changed by pressing i)
+	let g:netrw_liststyle=3
+"hides banner (can be changed by pressing I)
+	let g:netrw_banner=0
+
 "THEME SETUP
-	"let g:gruvbox_italic=1 "uncomment if terminal allows italics
+	let g:gruvbox_italic=1 "uncomment if terminal allows italics
 	colorscheme gruvbox
 	set background=dark
 	let g:gruvbox_contrast_dark="medium"
 
 "LIGHTLINE SETUP
+"set status line always visible
 	set laststatus=2
 	"set ttimeoutlen=50 (if it starts lagging)
 
 "NERDTREE SETUP
-	"map <C-n> :NERDTreeToggle<CR>
+"keyboard shortcut to ctrl+b (like in vscode) (could be <C-n> but that is already autocomlete in insert mode (plus, this is harder to key -> discourage using))
+	map <C-b> :NERDTreeToggle<CR>
+	let NERDTreeHijackNetrw=0
+	"let NERDTreeStatusline="NERD"
 
 "ALE SETUP
 "only lint on buffer open (enter) and save
@@ -89,6 +109,10 @@ call plug#end()
 "on some versions of gvim (vim-gkt3) on ubuntu cursor may disappear on lines with ALE errors or warnings
 "if you really need gvim (clipboard support) use next line to fix
 	"let g:ale_echo_cursor = 0
+
+"CTRLP SETUP
+"show hidden files (can cause slowdown)
+	let g:ctrlp_show_hidden=1
 
 "MAPPINGS
 "map đ to ctrl+] for jump to tag (subject to change)
@@ -105,6 +129,6 @@ call plug#end()
 "uses move command to move it up (-2 from the first slected line ) or down (+1 from the last selected line)
 "previous command closes visual selection so use gv command to reselect previously selected text
 "use = command to realign it (auto indentation)
-"use gv command again to reselect previously selected text (because = command closes visual selection)
+"use gv command again to reselct previously selected text (because = command closes visual selection)
 	vnoremap <C-Up> :m '<-2<CR>gv=gv
 	vnoremap <C-Down> :m '>+1<CR>gv=gv
