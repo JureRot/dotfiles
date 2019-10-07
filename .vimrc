@@ -15,6 +15,8 @@ call plug#begin('~/.vim/vim-plug')
 	"vim-unimpaired / vim-move (done with snippets (i think))
 	"supertab for autocomplete (USE CTRL+N MACRO INSTEAD AND CTRL+E TO EXIT (or omni complete ctrl+x-ctrl+o))
 	"ctrlp (dont know if needed)
+	"Plug 'blueyed/vim-diminactive'
+	"Plug 'TaDaa/vimade'
 call plug#end()
 
 "BASICS
@@ -101,5 +103,8 @@ call plug#end()
 	nnoremap <C-Down> V:m  +1<CR>
 "move visual selection up or down with ctrl+up/down
 "uses move command to move it up (-2 from the first slected line ) or down (+1 from the last selected line)
+"previous command closes visual selection so use gv command to reselect previously selected text
+"use = command to realign it (auto indentation)
+"use gv command again to reselect previously selected text (because = command closes visual selection)
 	vnoremap <C-Up> :m '<-2<CR>gv
 	vnoremap <C-Down> :m '>+1<CR>gv
