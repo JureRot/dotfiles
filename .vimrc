@@ -1,10 +1,9 @@
-"vim-plug
 call plug#begin('~/.vim/vim-plug')
 	"gruvbox colorscheme
 	Plug 'morhetz/gruvbox'
 	"vim-one colorscheme
 	"Plug 'rakr/vim-one'
-	"lightline
+	"lightline (could be done custom)
 	Plug 'itchyny/lightline.vim'
 	"ale
 	Plug 'w0rp/ale'
@@ -18,8 +17,8 @@ call plug#begin('~/.vim/vim-plug')
 	"supertab for autocomplete (USE CTRL+N MACRO INSTEAD AND CTRL+E TO EXIT (or omni complete ctrl+x-ctrl+o))
 	"ctrlp (dont know if needed, becuase of :find * but still much better fuzzy find)
 	Plug 'kien/ctrlp.vim'
-	"vim-diminactive (doesnt work with nerdtree, but than, nothing does)
-	Plug 'blueyed/vim-diminactive'
+	"vim-diminactive (done with autocommands)
+	"Plug 'blueyed/vim-diminactive'
 	"vimade (diminactive alternatvie, looks amazing, but dosnt work with mac on specific directory)
 	"Plug 'TaDaa/vimade'
 call plug#end()
@@ -66,7 +65,7 @@ call plug#end()
 	set cursorline
 
 "draw ruler at 80 chars
-	set colorcolumn=80
+	"set colorcolumn=80 "done in autocommands (dim inactive window)
 
 "disable automatic commmenting on new line
 	autocmd Filetype * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -77,6 +76,7 @@ call plug#end()
 "fix exiting visual mode delay
 	set timeoutlen=1000
 	set ttimeoutlen=0
+
 
 "NETRW SETUP
 "shows listing in tree view (can be changed by pressing i)
@@ -92,17 +92,23 @@ call plug#end()
 
 "LIGHTLINE SETUP
 "set status line always visible
-	set laststatus=2
+	set laststatus=2 "make statusline always visible
 	"set ttimeoutlen=50 (if it starts lagging)
 
 "NERDTREE SETUP
 "keyboard shortcut to ctrl+b (like in vscode) (could be <C-n> but that is already autocomlete in insert mode (plus, this is harder to key -> discourage using))
 	map <C-b> :NERDTreeToggle<CR>
 	let NERDTreeHijackNetrw=0
-	"let NERDTreeStatusline="NERD"
+"removes 'Press ? for help'
+	let NERDTreeMinimalUI=1
+"shows hidden files
+	let NERDTreeShowHidden=1
+"custom statusline for nerdtree (wip)
+	"let NERDTreeStatusline="NERD" "JUST PLACEHOLD FOR NOW (MAKING A CUSTOM STATUSLINE)
+	let NERDTreeStatusline='%p%%'
 
 "ALE SETUP
-"only lint on buffer open (enter) and save
+"only lint on buffer open (enter) and save (and not on text change)
 	let g:ale_lint_on_text_changed = 0
 	let g:ale_lint_on_enter = 1
 	let g:ale_lint_on_save = 1
@@ -113,6 +119,7 @@ call plug#end()
 "CTRLP SETUP
 "show hidden files (can cause slowdown)
 	let g:ctrlp_show_hidden=1
+
 
 "MAPPINGS
 "map đ to ctrl+] for jump to tag (subject to change)
@@ -132,3 +139,12 @@ call plug#end()
 "use gv command again to reselct previously selected text (because = command closes visual selection)
 	vnoremap <C-Up> :m '<-2<CR>gv=gv
 	vnoremap <C-Down> :m '>+1<CR>gv=gv
+
+"AUTOCOMMANDS
+"dim inactive windows to make the active one more obvious
+"make active windows have ruler at 80 characters
+	autocmd BufEnter,FocusGained,VimEnter,WinEnter * let &l:colorcolumn=80
+"make inactive windows have all (first 255) columns colored (thus making them paler)
+	autocmd FocusLost,WinLeave * let &l:colorcolumn=join(range(1, 255), ',')
+"we could color LineNr (line numbers) and EndOfBuffer (area under the text) the same color to make it more seamless (but it looks weird)
+"(to get the colorcolumn color look in :highlight)
