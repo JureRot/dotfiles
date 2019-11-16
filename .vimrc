@@ -6,7 +6,7 @@ call plug#begin('~/.vim/vim-plug')
 	"lightline (could be done custom)
 	Plug 'itchyny/lightline.vim'
 	"ale
-	Plug 'w0rp/ale'
+	Plug 'dense-analysis/ale'
 	"nerdtree
 	Plug 'scrooloose/nerdtree'
 	"vim-vinegar (maybe nerdtree alternative using netrw)
