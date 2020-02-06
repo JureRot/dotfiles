@@ -1,3 +1,4 @@
+"Need to install vim-plug
 call plug#begin('~/.nvim/vim-plug')
 	"gruvbox colorscheme
 	Plug 'morhetz/gruvbox'
