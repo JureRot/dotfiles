@@ -7,6 +7,5 @@ void bla(int n) {
 }
 
 int main(int argc, char *argv[]) {
-	//this is comment
 	bla(4);
 }
