@@ -14,7 +14,6 @@ call plug#begin('~/.nvim/vim-plug')
 	Plug 'TaDaa/vimade'
 call plug#end()
 
-
 "basics
 	"set nocompatible
 	set termguicolors "doesn't work in mac terminal (install iTerm2)
@@ -90,6 +89,8 @@ call plug#end()
 	let NERDTreeShowHidden=1
 	"remove 'Press ? for help'
 	"let NERDTreeMinimalUI=1
+	"custom statusline fro nerdtree (wip)
+	let NERDTreeStatusline='NERD %p%%'
 
 "COC SETUP
 let g:coc_global_extensions = [
@@ -143,7 +144,10 @@ nmap <silent> gr <Plug>(coc-references)
 " Use K to show documentation in preview window
 nnoremap <silent> F :call <SID>show_documentation()<CR>
 
-
+"STATUSLINE SETUP
+	"set statusline from other file
+	source ~/.config/nvim/statusline.vim
+	"source ~/.config/nvim/statusline2.vim
 
 "MAPPINGS
 "map đ to ctrl+] for jump to tag (subject to change)
