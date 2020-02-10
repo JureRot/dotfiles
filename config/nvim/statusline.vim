@@ -1,7 +1,7 @@
 "FOR NOW JUST A KNOCK OF OF LIGHTLINE (COULD BE PERSONALIZED)
 
 function! GetPath() abort
-	let l:basename=expand('%:p')
+	let l:basename=expand('%:h')
 	if l:basename == '' || l:basename == '.'
 		return ''
 	else
