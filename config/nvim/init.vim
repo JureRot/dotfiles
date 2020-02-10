@@ -91,6 +91,8 @@ call plug#end()
 	"let NERDTreeMinimalUI=1
 	"custom statusline fro nerdtree (wip)
 	let NERDTreeStatusline='NERD %p%%'
+	"make netrw not use nerdtree (bit its default)
+	let NERDTreeHijackNetrw=0
 
 "COC SETUP
 let g:coc_global_extensions = [
