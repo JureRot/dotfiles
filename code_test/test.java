@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 class test {
 	static void bla(int n, float b, int a) {
@@ -6,11 +7,11 @@ class test {
 	}
 
 	public static void main(String[] args) {
-		int one = 1;
-		int two = 2;
-		float three = 3;
 
-		bla(one, three, two);
+		int a = 1;
+		int b = 2;
+		float c = 3;
+
 
 	}
 
