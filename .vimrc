@@ -148,3 +148,5 @@ call plug#end()
 	autocmd FocusLost,WinLeave * let &l:colorcolumn=join(range(1, 255), ',')
 "we could color LineNr (line numbers) and EndOfBuffer (area under the text) the same color to make it more seamless (but it looks weird)
 "(to get the colorcolumn color look in :highlight)
+
+"[just a backup if neovim doesnt work out]
