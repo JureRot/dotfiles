@@ -108,6 +108,7 @@ let g:coc_global_extensions = [
 	"\ 'coc-spell-checker',
 	\ 'coc-markdownlint',
 	\ ]
+"coc-r-lsp needs r language server: R -> install.packages("languageserver")
 
 "coc-java on mac may need old milestone jdtls
 "coc-r-lsp on mac does not complete brackets for functions
