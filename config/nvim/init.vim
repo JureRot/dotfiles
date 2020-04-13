@@ -10,12 +10,13 @@ call plug#begin('~/.nvim/vim-plug')
 	Plug 'preservim/nerdtree'
 	"coc language server protocol support
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	"vimade (diminactive alternative) (desaturates inactive windows) NEEDS PYNVIM (pip3 install pynvim)
+	"vimade (diminactive alternative) (desaturates inactive windows) *check notes
 	Plug 'TaDaa/vimade'
 call plug#end()
 
+"*check notes
+
 "basics
-	"set nocompatible
 	set termguicolors "doesn't work in mac terminal (install iTerm2)
 	set number relativenumber
 	set wrap linebreak
@@ -94,7 +95,7 @@ call plug#end()
 	"make netrw not use nerdtree (but its default)
 	let NERDTreeHijackNetrw=0
 
-"COC SETUP
+""COC SETUP
 let g:coc_global_extensions = [
 	\ 'coc-pairs',
 	\ 'coc-git',
@@ -108,10 +109,7 @@ let g:coc_global_extensions = [
 	"\ 'coc-spell-checker',
 	\ 'coc-markdownlint',
 	\ ]
-"coc-r-lsp needs r language server: R -> install.packages("languageserver")
-
-"coc-java on mac may need old milestone jdtls
-"coc-r-lsp on mac does not complete brackets for functions
+"*check notes
 
 " don't give |ins-completion-menu| messages.
 "set shortmess+=c
@@ -171,3 +169,10 @@ nmap <silent> gr <Plug>(coc-references)
 	"use gv command again to reselect previously selected text (because = command closes visual selection)
 	vnoremap <C-Up> :m '<-2<CR>gv=gv
 	vnoremap <C-Down> :m '>+1<CR>gv=gv
+
+"NOTES:
+	"vimade needs pynvim (pip3 install pynvim), and needs to be updated with nvim (pip3 update pynvim)
+	"ubuntu wsl: coc -> checkhealt -> node.js not workin completeley
+	"coc-r-lsp needs r language server: R -> install.packages("languageserver")
+	"coc-java on mac may need old milestone jdtls
+	"coc-r-lsp on mac does not complete brackets for functions
