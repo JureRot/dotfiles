@@ -10,7 +10,7 @@ call plug#begin('~/.nvim/vim-plug')
 	Plug 'preservim/nerdtree'
 	"coc language server protocol support
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	"vimade (diminactive alternative) (desaturates inactive windows)"
+	"vimade (diminactive alternative) (desaturates inactive windows) NEEDS PYNVIM (pip3 install pynvim)
 	Plug 'TaDaa/vimade'
 call plug#end()
 
@@ -89,9 +89,9 @@ call plug#end()
 	let NERDTreeShowHidden=1
 	"remove 'Press ? for help'
 	"let NERDTreeMinimalUI=1
-	"custom statusline fro nerdtree (wip)
+	"custom statusline for nerdtree (wip)
 	let NERDTreeStatusline='NERD %p%%'
-	"make netrw not use nerdtree (bit its default)
+	"make netrw not use nerdtree (but its default)
 	let NERDTreeHijackNetrw=0
 
 "COC SETUP
@@ -109,8 +109,11 @@ let g:coc_global_extensions = [
 	\ 'coc-markdownlint',
 	\ ]
 
+"coc-java on mac may need old milestone jdtls
+"coc-r-lsp on mac does not complete brackets for functions
+
 " don't give |ins-completion-menu| messages.
-set shortmess+=c
+"set shortmess+=c
 
 " always show signcolumns
 set signcolumn=yes
@@ -144,12 +147,11 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window
-nnoremap <silent> F :call <SID>show_documentation()<CR>
+"nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 "STATUSLINE SETUP
 	"set statusline from other file
 	source ~/.config/nvim/statusline.vim
-	"source ~/.config/nvim/statusline2.vim
 
 "MAPPINGS
 "map đ to ctrl+] for jump to tag (subject to change)
