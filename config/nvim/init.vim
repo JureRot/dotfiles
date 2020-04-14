@@ -12,6 +12,8 @@ call plug#begin('~/.nvim/vim-plug')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	"vimade (diminactive alternative) (desaturates inactive windows) *check notes
 	Plug 'TaDaa/vimade'
+	"vlime common lisp development environment
+	Plug 'l04m33/vlime', {'rtp': 'vim/'}
 call plug#end()
 
 "*check notes
