@@ -13,7 +13,9 @@ call plug#begin('~/.nvim/vim-plug')
 	"vimade (diminactive alternative) (desaturates inactive windows) *check notes
 	Plug 'TaDaa/vimade'
 	"vlime common lisp development environment
-	"Plug 'l04m33/vlime', {'rtp': 'vim/'}
+	Plug 'l04m33/vlime', {'rtp': 'vim/'}
+	"paredit for structured editin of lisp S-expressions
+	Plug 'kovisoft/paredit'
 call plug#end()
 
 "*check notes
