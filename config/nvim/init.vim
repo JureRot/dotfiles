@@ -8,14 +8,14 @@ call plug#begin('~/.nvim/vim-plug')
 	Plug 'tpope/vim-vinegar'
 	"nerdtree (being fazed-out in favor of vim-vinegar)
 	Plug 'preservim/nerdtree'
-	"coc language server protocol support
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	"rainbow_parentheses bracket pair colorizor
+	Plug 'junegunn/rainbow_parentheses.vim'
 	"vimade (diminactive alternative) (desaturates inactive windows) *check notes
 	Plug 'TaDaa/vimade'
-	"vlime common lisp development environment
-	Plug 'l04m33/vlime', {'rtp': 'vim/'}
-	"paredit for structured editin of lisp S-expressions
-	Plug 'kovisoft/paredit'
+	"vim-slime REPL functionality (from Emacs SLIME)
+	Plug 'jpalardy/vim-slime'
+	"coc language server protocol support
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 "*check notes
@@ -87,6 +87,12 @@ call plug#end()
 	"hides banner (can be changed by pressing I)
 	let g:netrw_banenr=0
 
+"RAINBOW PARENTHESES SETUP
+	"set brackets to be paired
+	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+	"autostart
+	autocmd VimEnter * RainbowParentheses
+
 "NERDTREE SETUP
 	"set toggle to ctrl+b (like vscode)
 	map <C-b> :NERDTreeToggle<CR>
@@ -99,7 +105,11 @@ call plug#end()
 	"make netrw not use nerdtree (but its default)
 	let NERDTreeHijackNetrw=0
 
-""COC SETUP
+"VIM-SLIME SETUP
+	"use tmux instead of gnu screen (default)
+	let g:slime_target = "tmux"
+
+"COC SETUP
 let g:coc_global_extensions = [
 	\ 'coc-pairs',
 	\ 'coc-git',
