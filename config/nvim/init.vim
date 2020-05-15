@@ -14,7 +14,7 @@ call plug#begin('~/.nvim/vim-plug')
 	Plug 'TaDaa/vimade'
 	"vim-slime REPL functionality (from Emacs SLIME)
 	Plug 'jpalardy/vim-slime'
-	"coc language server protocol support
+	"coc language server protocol support (could be replaced by nvim-lsp)
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -108,6 +108,8 @@ call plug#end()
 "VIM-SLIME SETUP
 	"use tmux instead of gnu screen (default)
 	let g:slime_target = "tmux"
+	"create default config
+	let g:slime_default_config = {"socket_name": "default", "target_pane": "{right-of}"}
 
 "COC SETUP
 let g:coc_global_extensions = [
