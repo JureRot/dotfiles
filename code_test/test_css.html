@@ -1,0 +1,22 @@
+<head>
+<meta charset="utf-8">
+</head>
+<style>
+h1 {text-decoration: underline}
+.red {color: #ff0000}
+.center {text-align: center}
+.slant {font-style: italic}
+.blue {color: #0000ff}
+</style>
+<h1 id="naslov">Naslov</h1>
+<p>In še nekaj teksta tukaj</p>
+<p class="red">
+red text
+</p>
+<h3 class="red" id="identifier">Red text title</h3>
+<div class="center slant blue">
+<p>narediš markdown z head-om (utf-8) in style-om</p>
+<p>convertaš v html z pandoc-om</p>
+<p>convertaš v pdf z wkhtmltopdf-om</p>
+</div>
+<p>or pandoc -t html file.md -o file.pdf works for pandoc 1.20 and up with wkhtmltopdf installed</p>
