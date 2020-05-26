@@ -30,4 +30,4 @@ convertaš v pdf z wkhtmltopdf-om
 or pandoc -t html file.md -o file.pdf
 works for pandoc 1.20 and up with wkhtmltopdf installed
 
-<p class=.slant>in ubuntu we need to run with xvfb-run -- ... </p>
+<p class="slant">in ubuntu we need to run with xvfb-run -- ... </p>
