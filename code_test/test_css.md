@@ -3,7 +3,10 @@
 </head>
 
 <style>
-h1 {text-decoration: underline}
+h1 {
+	text-decoration: underline;
+	padding: 100px
+}
 .red {color: #ff0000}
 .center {text-align: center}
 .slant {font-style: italic}
