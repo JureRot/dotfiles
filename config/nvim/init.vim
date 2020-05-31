@@ -1,7 +1,9 @@
 "Need to install vim-plug
 call plug#begin('~/.nvim/vim-plug')
 	"gruvbox colorscheme
-	Plug 'morhetz/gruvbox'
+	"Plug 'morhetz/gruvbox'
+	"community maintained edition of gruvbox
+	Plug 'gruvbox-community/gruvbox'
 	"ctrlp fuzzy finder
 	Plug 'kien/ctrlp.vim'
 	"vim-vinegar to enhance netrw (vim built-in directory browser)
