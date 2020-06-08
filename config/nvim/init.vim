@@ -1,7 +1,5 @@
 "Need to install vim-plug
 call plug#begin('~/.nvim/vim-plug')
-	"gruvbox colorscheme
-	"Plug 'morhetz/gruvbox'
 	"community maintained edition of gruvbox
 	Plug 'gruvbox-community/gruvbox'
 	"ctrlp fuzzy finder
@@ -41,7 +39,7 @@ call plug#end()
 	set listchars=tab:\|\ 
 	"space above is needed
 
-"hightlith cursort line
+"hightlith cursor line
 	set cursorline
 
 "draw ruler at 80 chars
@@ -89,12 +87,6 @@ call plug#end()
 	"hides banner (can be changed by pressing I)
 	let g:netrw_banenr=0
 
-"RAINBOW PARENTHESES SETUP
-	"set brackets to be paired
-	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
-	"autostart
-	autocmd VimEnter * RainbowParentheses
-
 "NERDTREE SETUP
 	"set toggle to ctrl+b (like vscode)
 	map <C-b> :NERDTreeToggle<CR>
@@ -106,6 +98,12 @@ call plug#end()
 	let NERDTreeStatusline='NERD %p%%'
 	"make netrw not use nerdtree (but its default)
 	let NERDTreeHijackNetrw=0
+
+"RAINBOW PARENTHESES SETUP
+	"set brackets to be paired
+	let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+	"autostart
+	autocmd VimEnter * RainbowParentheses
 
 "VIM-SLIME SETUP
 	"use tmux instead of gnu screen (default)
