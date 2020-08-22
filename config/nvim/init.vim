@@ -3,7 +3,10 @@ call plug#begin('~/.nvim/vim-plug')
 	"community maintained edition of gruvbox
 	Plug 'gruvbox-community/gruvbox'
 	"ctrlp fuzzy finder
-	Plug 'kien/ctrlp.vim'
+	"Plug 'kien/ctrlp.vim'
+	"fzf + fzf.vim fuzzy finder (ctrlp alternative) * check notes
+	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+	Plug 'junegunn/fzf.vim'
 	"vim-vinegar to enhance netrw (vim built-in directory browser)
 	Plug 'tpope/vim-vinegar'
 	"nerdtree (being fazed-out in favor of vim-vinegar)
@@ -79,7 +82,18 @@ call plug#end()
 
 "CTRLP SETUP
 	"show hidden files (can cause slowdown)
-	let g:ctrlp_show_hidden=1
+	"let g:ctrlp_show_hidden=1
+
+"FZF.VIM SETUP
+	"map ctrl+p in normal mode to :Files (search files in current dir)
+	nnoremap <C-p> :Files<CR>
+	"map leader(\)+f in normal mode to :BLines (search line in current buffer)
+	nnoremap <leader>f :BLines<CR>
+	"map leader(\)+g in normal mode to :Rg (search line in current directory) * check notes
+	nnoremap <leader>g :Rg<CR>
+	"setup previews (cat / bat / highlith)"
+
+	"setup visual maps for seching selected text (yank + ctrl+r ") for buffer (/) and directory(:Rg)
 
 "NETRW / VIM-VINEGAR SETUP
 	"shows listing in tree view (can be changed by pressing i)
