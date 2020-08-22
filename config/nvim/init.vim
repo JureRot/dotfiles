@@ -202,6 +202,8 @@ nmap <silent> gr <Plug>(coc-references)
 
 "NOTES:
 	"vimade needs pynvim (pip3 install pynvim), and needs to be updated with nvim (pip3 update pynvim)
+	"fzf.vim needs fzf
+	"fzf.vim :Rg requires ripgrep
 	"ubuntu wsl: coc -> checkhealt -> node.js not workin completeley
 	"coc-r-lsp needs r language server: R -> install.packages("languageserver")
 	"coc-java on mac may need old milestone jdtls
