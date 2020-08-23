@@ -1,0 +1,14 @@
+set preview true
+set hidden true
+set color256 true
+
+cmd open $nvim $fx
+
+#need to add other functions (mkdir, rename, ...)
+
+map <esc> quit
+map <enter> open
+
+# need to make other mappings delete, rename, mkdir, copy, cut, paste, ...
+
+#need to make preview script with syntax highlighting (cat, bat, highlight, ...?)
