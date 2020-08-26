@@ -188,6 +188,9 @@ nmap <silent> gr <Plug>(coc-references)
 "map š to ctrl+t for jump back from tag (subject to change)
 	nnoremap <Char-353> <C-t>
 
+"map ctrl + backspace in insert mode to delete the word (built-in ctrl+w shortcut)
+	inoremap <C-BS> <C-W>
+
 "move line up and down in normal mode with ctrl+up/down
 	"selects the line with V and uses move command to move it up (-2 because it pastes below address) or down (+1) one line
 	nnoremap <C-Up> V:m -2<CR>
