@@ -94,6 +94,7 @@ call plug#end()
 	"setup previews (cat / bat / highlith)"
 
 	"setup visual maps for seching selected text (yank + ctrl+r ") for buffer (/) and directory(:Rg)
+	"setup normal maps for searching text under cursor for buffers and directory
 
 "NETRW / VIM-VINEGAR SETUP
 	"shows listing in tree view (can be changed by pressing i)
