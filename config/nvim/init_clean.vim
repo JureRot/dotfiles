@@ -202,8 +202,6 @@ call plug#end()
 	source ~/.config/nvim/statusline.vim
 
 "MAPPINGS
-"map ctrl + backspace to delete previous word
-	inoremap <C-BS> <C-W>
 "map đ to ctrl+] for jump to tag (subject to change)
 	nnoremap <Char-273> <C-]>
 "map š to ctrl+t for jump back from tag (subject to change)
