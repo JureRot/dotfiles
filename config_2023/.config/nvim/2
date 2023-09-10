@@ -1,0 +1,49 @@
+# README
+
+## todo:
+
+X na novo postav ta file (ker ti ga je nekak ratal zbrisat)
+
+- push all of this to git (as well as tmux config)
+- create readme documentation how stuff works (how to add lsp support for languages, and linters for treesitter)
+- use and learn file navigation (multiple files) and workflow
+- use and learn git in nvim (plugins and just to commit hunks instead of whole files)
+- use and learn tmux
+- use and learn gnu core utils
+- design a workflow that feels and works nice (by using nvim and seeing where the painpoints are)
+- set keybindings for designed workflow (file navigation (declarations, references, general search), file creation and manipulation, moving between buffers, moving between changed/recent files, windows, tabs, marks (harpoon), jumplists, changelists, quickfix, jump back by recent changes, whatever else)
+x bufferline (or topbar for lualine if possible) to show open buffers (used barbar.nvim because it shows git status (but could be better))
+- git history for selection (more than just git blame)
+- set keybindings for vim-fugitive and gitsigns
+- vim-slime (sbcl, maybe for mysql, python, clojure)
+X change netrw binding or tmux leader key (both are <C-b>) (not an issue any more) (can still change tmux leader to something more comfortable)
+- telescope fzf serch (if it gets slow)
+- telescope has some lsp_diagnostics and lsp_references (maybe its easier and nicer to search with than with lps keybindings)
+- highlight work under currsor in the buffer (treesitter context aware)
+X show code scope at the top of the page (winbar (code scopes at the top of the screen))
+- autodeploy functionality (nvim-sftp-sync, rsync, vim-sync, vim-hsfpt) (https://www.youtube.com/watch?v=wkk35c4Uk8A)
+- highlight yanked
+X keep netrw unfolded as it was (or at least unfold to current file) (cant do so we use nvim-tree instead)
+X maybe gui style file navigation
+- have some long-term/long-running undo / history of file so you dont overwrite again (persistant-undo (vim feature) + undotree)
+- remember last edit position
+- rainbow parens (maybe useful for lisp)
+- nvim terminal (or just use tmux pane instead)
+X switch to lazy.nvim from packer (https://www.youtube.com/watch?v=2ahI8lYUYgw)
+X marks plugin (to show marks locations) (also works in phpstorm) (useful for jumping within a file, use harpoon to jumb between files)
+X harpoon (because buffer list cant be rearranged and i don want to use tabs)
+X git worktree (instead of stashing and checkingout) (this is not only nvim thing, but a git native thing) (https://www.youtube.com/watch?v=IK_mjDqGUYE)
+- better bindings for nvimtree (l opens the file and closes the neotree, h collapses the dir node (this will need something custom))
+- lower the hold threashold for dygma raise
+- maybe fork barbar.nvim and make pr to dissable numbers for diagnostics and gitsigns and combine all gitsigns into one icon (or maybe add git functionality to bufferline)
+- maybe use C-hjkl for harpoon and <leader> hjkl for windows navigation (and ctrl+tab and ctrl+shift+tab to :bnext and :bprev)
+X make treesitter and neotree show hidden dirs and files within those
+X play around with barbar settings for inactive buffers (maybe keep some color if modified, git and diagnostics look bad in inactive tabs) (maybe see how bufferline does it) (nothing useful, bufferline still does it better) 
+- i know its repeating but: bindings for workflow (telescope, harpoon next/prev, windows, buffers (maybe just use harpoon for buffers))
+X add git status to terminal prompt (branch name, status is represented by color) (old linux computer) (added script to .config/bash dir and added calls in .bashrc)
+- add multiple git configs for wsl (https://joshcgrossman.com/2022/01/26/getting-multiple-github-accounts-on-one-linux-wsl-machine/) (https://medium.com/@pinglinh/how-to-have-2-github-accounts-on-one-machine-windows-69b5b4c5b14e)
+X 0 to lsp
+X nvim from scratch series (https://www.youtube.com/watch?v=ctH-a-1eUME&list=PLhoH5vyxr6Qq41NFL4GvhFp-WLd5xzIzZ&index=1)
+- more plugins (https://github.com/rockerBOO/awesome-neovim/blob/main/README.md)
+
+- but most importantly just use it (maybe use barbar fork as practice project)

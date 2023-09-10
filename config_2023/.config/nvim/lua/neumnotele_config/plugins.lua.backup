@@ -1,0 +1,82 @@
+-- Bootstrapping method to install packer package manager
+-- check if installed and install if not
+-- than sync plugins
+
+local ensure_packer = function()
+	local fn = vim.fn
+	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+	if fn.empty(fn.glob(install_path)) > 0 then
+		fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+		vim.cmd [[packadd packer.nvim]]
+		return true
+	end
+	return false
+end
+
+local packer_bootstrap = ensure_packer()
+
+return require('packer').startup(function(use)
+	use 'wbthomason/packer.nvim'
+	-- OTHER PLUGINS
+	-- colorscheme
+	use {
+		'ellisonleao/gruvbox.nvim', -- ugly integration with fugitive and gitsigns (alternatives: 'sainnhe/gruvbox-material', 'luisiacc/gruvbox-baby')
+		'navarasu/onedark.nvim',
+		-- jetbrains (new ui) dracula theme?
+		'sainnhe/sonokai',
+	}
+	-- statusline
+	use { 'nvim-lualine/lualine.nvim',
+		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
+	-- file navigation, grep
+	use { 'nvim-telescope/telescope.nvim',
+		tag = '0.1.2',
+		requires = { 'nvim-lua/plenary.nvim' }
+	}
+	-- syntax highlighting
+	use { 'nvim-treesitter/nvim-treesitter',
+		run = 'TSUpdate'
+	}
+	-- gui-type file navigation (nerdtree/nvim-tree/neotree)?
+	-- git integration
+	use {
+		'tpope/vim-fugitive',
+		'lewis6991/gitsigns.nvim'
+	}
+	-- lsp
+	use {
+		'williamboman/mason.nvim',
+		'williamboman/mason-lspconfig.nvim',
+		'neovim/nvim-lspconfig',
+	}
+	-- autocompletion + snippets
+	use {
+		'hrsh7th/nvim-cmp',
+		'hrsh7th/cmp-nvim-lsp',
+		'hrsh7th/cmp-buffer',
+		'hrsh7th/cmp-path',
+		'hrsh7th/cmp-cmdline',
+		'hrsh7th/cmp-nvim-lua',
+		'L3MON4D3/LuaSnip',
+		-- 'saadparwaiz1/cmp_luasnip' -- additional vscode like snippets
+		-- 'rafamadriz/friendly-snippets'
+		'windwp/nvim-autopairs'
+		}
+	-- github copilot (requires nodejs)
+	-- use { "github/copilot.vim" } -- than :Copilot setup to authenticate
+	-- undootree
+	-- other plugins
+	-- highligthed todos in comments
+	use { 'folke/todo-comments.nvim',
+	  requires = "nvim-lua/plenary.nvim",
+	}
+	-- use 'Bekaboo/deadcolumn.nvim' -- makes color column (at column 80) nicer (doesnt work well with cursorline)
+
+
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if packer_bootstrap then
+	  require('packer').sync()
+	end
+end)
